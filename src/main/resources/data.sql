@@ -1,6 +1,5 @@
-SELECT * FROM public.weather
 
-    INSERT INTO weather (city, weather_condition, temperature)
+INSERT INTO weather (city, weather_condition, temperature)
 VALUES ('New York', 'SUNNY', 25.00),
     ('Los Angeles', 'CLOUDY', 22.00),
     ('Chicago', 'RAINY', 18.00),
