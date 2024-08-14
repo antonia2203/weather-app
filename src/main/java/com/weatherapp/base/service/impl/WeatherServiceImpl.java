@@ -1,34 +1,27 @@
 package com.weatherapp.base.service.impl;
 
-
 import com.weatherapp.base.repository.WeatherRepository;
-import org.springframework.stereotype.Service;
 import com.weatherapp.base.model.WeatherCondition;
 import com.weatherapp.base.model.WeatherDTO;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-
-
-
 @Service
 public class WeatherServiceImpl {
 
+    //for dependency injection
     private final WeatherRepository weatherRepository;
 
-    // Constructor Injection
+    //constructor injection
     public WeatherServiceImpl(WeatherRepository weatherRepository) {
         this.weatherRepository = weatherRepository;
     }
 
     public WeatherDTO getWeatherByCity(String city) {
-        if (city == null || city.isEmpty()) {
-            return null;
-        }
-
-        Optional<WeatherDTO> weather = weatherRepository.findByCity(city);
-        return weather.orElse(null);
+        return city != null && !city.isEmpty() ?
+                weatherRepository.findByCity(city).orElse(null) : null;
     }
 
     public WeatherDTO getWeatherById(Long id) {

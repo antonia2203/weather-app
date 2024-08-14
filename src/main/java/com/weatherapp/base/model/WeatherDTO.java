@@ -24,8 +24,8 @@ public class WeatherDTO {
     @Column(name = "temperature", nullable = false)
     private Double temperature;
 
+    // Default constructor for JPA
     public WeatherDTO() {
-        // Default constructor for JPA
     }
 
     public WeatherDTO(Long id, String city, WeatherCondition weatherCondition, Double temperature) {
