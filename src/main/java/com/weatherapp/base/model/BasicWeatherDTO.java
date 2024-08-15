@@ -5,12 +5,13 @@ public class BasicWeatherDTO {
     private Double temperature;
 
     public BasicWeatherDTO() {
-        // Default constructor
+
     }
 
     public BasicWeatherDTO(String city, Double temperature) {
         this.city = city;
         this.temperature = temperature;
+
     }
 
     public String getCity() {
@@ -29,11 +30,14 @@ public class BasicWeatherDTO {
         this.temperature = temperature;
     }
 
+
     @Override
     public String toString() {
         return "BasicWeatherDTO{" +
                 "city='" + city + '\'' +
                 ", temperature=" + temperature +
                 '}';
+
     }
 }
+
